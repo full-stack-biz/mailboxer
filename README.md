@@ -318,6 +318,7 @@ If you need a GUI you should take a look at these links:
 * https://github.com/mailboxer/mailboxer/pull/508
 * https://github.com/mailboxer/mailboxer/pull/507
 * https://github.com/mailboxer/mailboxer/pull/504
+* https://github.com/mailboxer/mailboxer/pull/503
 
 ## Contributors
 * [Roendal](https://github.com/ging/mailboxer/commits/master?author=Roendal) (Eduardo Casanova)
@@ -344,4 +345,4 @@ If you need a GUI you should take a look at these links:
 * [nhinze](https://github.com/mailboxer/mailboxer/commits/master?author=nhinze) (Nhinze)
 * [rockdog](https://github.com/mailboxer/mailboxer/commits/master?author=rockdog) (Sven Steinheißer)
 * [MarkFChavez](https://github.com/mailboxer/mailboxer/commits/master?author=MarkFChavez) (Mark Chavez)
-
+* [booleanbetrayal](https://github.com/mailboxer/mailboxer/commits/master?author=booleanbetrayal) (Brent Dearth)

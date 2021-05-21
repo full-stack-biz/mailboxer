@@ -7,6 +7,7 @@
 * Add support for multiple attachments instead of one (breaking change), Thanks to @nhinze
 * Replace Carrierwave support with ActiveStorage, thanks to @nhinze
 * Fix typo in README, thanks to @MarkFChavez
+* Replace deprecated `update_attributes` with `update`, thanks to @booleanbetrayal
 
 ### Removed
 
