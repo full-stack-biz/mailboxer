@@ -1,7 +1,6 @@
-# Mailboxer [![Build Status](https://travis-ci.org/mailboxer/mailboxer.svg?branch=master)](https://travis-ci.org/mailboxer/mailboxer) [![Gem Version](https://badge.fury.io/rb/mailboxer.png)](http://badge.fury.io/rb/mailboxer) [![](https://gemnasium.com/ging/mailboxer.png)](https://gemnasium.com/ging/mailboxer)
+# Mailboxer [![Build Status](https://travis-ci.org/chriscz/mailboxer.svg?branch=master)](https://travis-ci.org/chriscz/mailboxer) [![Gem Version](https://badge.fury.io/rb/mailboxer.png)](http://badge.fury.io/rb/mailboxer)
 
-This project is based on the need for a private message system for [ging
-/ social\_stream](https://github.com/ging/social_stream). Instead of creating our core message system heavily
+This project is based on the need for a private message system for [ging / social\_stream](https://github.com/ging/social_stream). Instead of creating our core message system heavily
 dependent on our development, we are trying to implement a generic and
 potent messaging gem.
 
@@ -18,7 +17,7 @@ of a `Mailbox` object for each messageable with `inbox`, `sentbox` and
 The gem is constantly growing and improving its functionality. As it is
 used with our parallel development [ging / social\_stream](https://github.com/ging/social_stream) we are finding and fixing bugs continously. If you want
 some functionality not supported yet or marked as TODO, you can create
-an [issue](https://github.com/ging/mailboxer/issues) to ask for it. It will be great feedback for us, and we
+an [issue](https://github.com/chriscz/mailboxer/issues) to ask for it. It will be great feedback for us, and we
 will know what you may find useful in the gem.
 
 Mailboxer was born from the great, but outdated, code from [lpsergi /
@@ -27,7 +26,7 @@ acts_as_messageable](https://github.com/psergi/acts_as_messageable).
 We are now working to make exhaustive documentation and some wiki
 pages in order to make it even easier to use the gem to its full potential.
 Please, give us some time if you find something missing or [ask for
-it](https://github.com/ging/mailboxer/issues).  You can also find us on the [Gitter room for this repo](https://gitter.im/mailboxer/mailboxer).  Join us there to talk.
+it](https://github.com/chriscz/mailboxer/issues).  You can also find us on the [Gitter room for this repo](https://gitter.im/chriscz/mailboxer).  Join us there to talk.
 
 Installation
 ------------
@@ -316,7 +315,7 @@ Thanks to [Roman Kushnir (@RKushnir)](https://github.com/RKushnir/) you can test
 
 If you need a GUI you should take a look at these links:
 
-* The wiki page [GUI Example on a real application](https://github.com/ging/mailboxer/wiki/GUI-Example-on-a-real-application).
+* The wiki page [GUI Example on a real application](https://github.com/chriscz/mailboxer/wiki/GUI-Example-on-a-real-application).
 
 ## Merged Pull Requests
 * https://github.com/mailboxer/mailboxer/pull/508
@@ -330,33 +329,33 @@ If you need a GUI you should take a look at these links:
 * https://github.com/mailboxer/mailboxer/pull/515
 
 ## Contributors
-* [Roendal](https://github.com/ging/mailboxer/commits/master?author=Roendal) (Eduardo Casanova)
-* [dickeyxxx](https://github.com/ging/mailboxer/commits/master?author=dickeyxxx) (Jeff Dickey)
-* [RKushnir](https://github.com/ging/mailboxer/commits/master?author=RKushnir) (Roman Kushnir)
-* [amaierhofer](https://github.com/ging/mailboxer/commits/master?author=amaierhofer) (Andreas Maierhofer)
-* [tonydewan](https://github.com/ging/mailboxer/commits/master?author=tonydewan) (Tony Dewan)
-* [plentz](https://github.com/ging/mailboxer/commits/master?author=plentz) (Diego Plentz)
-* [laserlemon](https://github.com/ging/mailboxer/commits/master?author=laserlemon) (Steve Richert)
-* [daveworth](https://github.com/ging/mailboxer/commits/master?author=daveworth) (Dave Worth)
-* [rafaelgg](https://github.com/ging/mailboxer/commits/master?author=rafaelgg) (Rafael Garcia)
-* [joshblour](https://github.com/ging/mailboxer/commits/master?author=joshblour) (joshblour)
-* [iamdeuterium](https://github.com/ging/mailboxer/commits/master?author=iamdeuterium) (iamdeuterium)
-* [daveworth](https://github.com/ging/mailboxer/commits/master?author=daveworth) (Dave Worth)
-* [parndt](https://github.com/ging/mailboxer/commits/master?author=parndt) (Philip Arndt)
-* [atd](https://github.com/ging/mailboxer/commits/master?author=atd) (Antonio Tapiador)
-* [mobilutz](https://github.com/ging/mailboxer/commits/master?author=mobilutz) (Lutz)
-* [bennick](https://github.com/ging/mailboxer/commits/master?author=bennick) (Ryan Bennick)
-* [rjst](https://github.com/ging/mailboxer/commits/master?author=rjst) (Ricardo Trindade)
-* [fabianoalmeida](https://github.com/ging/mailboxer/commits/master?author=fabianoalmeida) (Fabiano Almeida)
-* [supremebeing7](https://github.com/ging/mailboxer/commits/master?author=supremebeing7) (Mark J. Lehman)
-* [searsaw](https://github.com/mailboxer/mailboxer/commits/master?author=searsaw) (Alex Sears)
-* [joshblour](https://github.com/mailboxer/mailboxer/commits/master?author=joshblour) (Yonah Forst)
-* [nhinze](https://github.com/mailboxer/mailboxer/commits/master?author=nhinze) (Nhinze)
-* [rockdog](https://github.com/mailboxer/mailboxer/commits/master?author=rockdog) (Sven Steinheißer)
-* [MarkFChavez](https://github.com/mailboxer/mailboxer/commits/master?author=MarkFChavez) (Mark Chavez)
-* [booleanbetrayal](https://github.com/mailboxer/mailboxer/commits/master?author=booleanbetrayal) (Brent Dearth)
-* [fastengineer](https://github.com/mailboxer/mailboxer/commits/master?author=fastengineer) (Mehmet Aydogdu)
-* [afamyial](https://github.com/mailboxer/mailboxer/commits/master?author=afamyial) (Mehmet Aydogdu)
-* [KaoruDev](https://github.com/mailboxer/mailboxer/commits/master?author=KaoruDev) (Kaoru Kohashigawa)
-* [jerefrer](https://github.com/mailboxer/mailboxer/commits/master?author=jerefrer) (Jérémy FRERE)
-* [kevinjbayer](https://github.com/mailboxer/mailboxer/commits/master?author=kevinjbayer) (Kevin Bayer)
+* [Roendal](https://github.com/chriscz/mailboxer/commits/master?author=Roendal) (Eduardo Casanova)
+* [dickeyxxx](https://github.com/chriscz/mailboxer/commits/master?author=dickeyxxx) (Jeff Dickey)
+* [RKushnir](https://github.com/chriscz/mailboxer/commits/master?author=RKushnir) (Roman Kushnir)
+* [amaierhofer](https://github.com/chriscz/mailboxer/commits/master?author=amaierhofer) (Andreas Maierhofer)
+* [tonydewan](https://github.com/chriscz/mailboxer/commits/master?author=tonydewan) (Tony Dewan)
+* [plentz](https://github.com/chriscz/mailboxer/commits/master?author=plentz) (Diego Plentz)
+* [laserlemon](https://github.com/chriscz/mailboxer/commits/master?author=laserlemon) (Steve Richert)
+* [daveworth](https://github.com/chriscz/mailboxer/commits/master?author=daveworth) (Dave Worth)
+* [rafaelgg](https://github.com/chriscz/mailboxer/commits/master?author=rafaelgg) (Rafael Garcia)
+* [joshblour](https://github.com/chriscz/mailboxer/commits/master?author=joshblour) (joshblour)
+* [iamdeuterium](https://github.com/chriscz/mailboxer/commits/master?author=iamdeuterium) (iamdeuterium)
+* [daveworth](https://github.com/chriscz/mailboxer/commits/master?author=daveworth) (Dave Worth)
+* [parndt](https://github.com/chriscz/mailboxer/commits/master?author=parndt) (Philip Arndt)
+* [atd](https://github.com/chriscz/mailboxer/commits/master?author=atd) (Antonio Tapiador)
+* [mobilutz](https://github.com/chriscz/mailboxer/commits/master?author=mobilutz) (Lutz)
+* [bennick](https://github.com/chriscz/mailboxer/commits/master?author=bennick) (Ryan Bennick)
+* [rjst](https://github.com/chriscz/mailboxer/commits/master?author=rjst) (Ricardo Trindade)
+* [fabianoalmeida](https://github.com/chriscz/mailboxer/commits/master?author=fabianoalmeida) (Fabiano Almeida)
+* [supremebeing7](https://github.com/chriscz/mailboxer/commits/master?author=supremebeing7) (Mark J. Lehman)
+* [searsaw](https://github.com/chriscz/mailboxer/commits/master?author=searsaw) (Alex Sears)
+* [joshblour](https://github.com/chriscz/mailboxer/commits/master?author=joshblour) (Yonah Forst)
+* [nhinze](https://github.com/chriscz/mailboxer/commits/master?author=nhinze) (Nhinze)
+* [rockdog](https://github.com/chriscz/mailboxer/commits/master?author=rockdog) (Sven Steinheißer)
+* [MarkFChavez](https://github.com/chriscz/mailboxer/commits/master?author=MarkFChavez) (Mark Chavez)
+* [booleanbetrayal](https://github.com/chriscz/mailboxer/commits/master?author=booleanbetrayal) (Brent Dearth)
+* [fastengineer](https://github.com/chriscz/mailboxer/commits/master?author=fastengineer) (Mehmet Aydogdu)
+* [afamyial](https://github.com/chriscz/mailboxer/commits/master?author=afamyial) (Mehmet Aydogdu)
+* [KaoruDev](https://github.com/chriscz/mailboxer/commits/master?author=KaoruDev) (Kaoru Kohashigawa)
+* [jerefrer](https://github.com/chriscz/mailboxer/commits/master?author=jerefrer) (Jérémy FRERE)
+* [kevinjbayer](https://github.com/chriscz/mailboxer/commits/master?author=kevinjbayer) (Kevin Bayer)
