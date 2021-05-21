@@ -199,7 +199,7 @@ end
 ## Mailboxer API
 
 ### Warning for version 0.8.0
-Version 0.8.0 sees `Messageable#read` and `Messageable#unread` renamed to `mark_as_(un)read`, and `Receipt#read` and `Receipt#unread` to `is_(un)read`. This may break existing applications, but `read` is a reserved name for Active Record, and the best pratice in this case is simply avoid using it.
+Version 0.8.0 sees `Messageable#read` and `Messageable#unread` renamed to `mark_as_(un)read`, and `Receipt#read` and `Receipt#unread` to `is_(un)read`. This may break existing applications, but `read` is a reserved name for Active Record, and the best practice in this case is simply avoid using it.
 
 ### How can I send a message?
 
@@ -314,9 +314,10 @@ If you need a GUI you should take a look at these links:
 
 * The wiki page [GUI Example on a real application](https://github.com/ging/mailboxer/wiki/GUI-Example-on-a-real-application).
 
-## Merged PRS
+## Merged Pull Requests
 * https://github.com/mailboxer/mailboxer/pull/508
 * https://github.com/mailboxer/mailboxer/pull/507
+* https://github.com/mailboxer/mailboxer/pull/504
 
 ## Contributors
 * [Roendal](https://github.com/ging/mailboxer/commits/master?author=Roendal) (Eduardo Casanova)
@@ -342,3 +343,5 @@ If you need a GUI you should take a look at these links:
 * [joshblour](https://github.com/mailboxer/mailboxer/commits/master?author=joshblour) (Yonah Forst)
 * [nhinze](https://github.com/mailboxer/mailboxer/commits/master?author=nhinze) (Nhinze)
 * [rockdog](https://github.com/mailboxer/mailboxer/commits/master?author=rockdog) (Sven Steinheißer)
+* [MarkFChavez](https://github.com/mailboxer/mailboxer/commits/master?author=MarkFChavez) (Mark Chavez)
+
