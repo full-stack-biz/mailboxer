@@ -355,7 +355,7 @@ If you need a GUI you should take a look at these links:
 * [MarkFChavez](https://github.com/chriscz/mailboxer/commits/master?author=MarkFChavez) (Mark Chavez)
 * [booleanbetrayal](https://github.com/chriscz/mailboxer/commits/master?author=booleanbetrayal) (Brent Dearth)
 * [fastengineer](https://github.com/chriscz/mailboxer/commits/master?author=fastengineer) (Mehmet Aydogdu)
-* [afamyial](https://github.com/chriscz/mailboxer/commits/master?author=afamyial) (Mehmet Aydogdu)
+* [afamyial](https://github.com/chriscz/mailboxer/commits/master?author=afamyial) (Ankit Famyial)
 * [KaoruDev](https://github.com/chriscz/mailboxer/commits/master?author=KaoruDev) (Kaoru Kohashigawa)
 * [jerefrer](https://github.com/chriscz/mailboxer/commits/master?author=jerefrer) (Jérémy FRERE)
 * [kevinjbayer](https://github.com/chriscz/mailboxer/commits/master?author=kevinjbayer) (Kevin Bayer)
