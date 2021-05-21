@@ -22,7 +22,6 @@
 * Add `deleted`, `not_deleted` scopes, thanks to @afamyial
 * Add `with_email` option to allow not sending an email via send_message, thanks to @KaoruDev
 * Add appraisals for Rails 5.0, 5.0-sqlite, 5.2, 6.0, 6.1 (@chriscz)
-* Add appraisals for Rails 6.2 and update travis (@chriscz)
 
 ### Fixed
 
