@@ -13,6 +13,7 @@
 ### Removed
 
 * Drop test runs for Ruby 2.2.x and 2.3.x, thanks to @rockdog
+* Drop support for Rails 5.0 and 5.1
 
 ### Added
 
@@ -21,7 +22,8 @@
 * Add "not_trashed" example to README, thanks to @fastengineer
 * Add `deleted`, `not_deleted` scopes, thanks to @afamyial
 * Add `with_email` option to allow not sending an email via send_message, thanks to @KaoruDev
-* Add appraisals for Rails 5.0, 5.0-sqlite, 5.2, 6.0, 6.1 (@chriscz)
+* Add appraisals for Rails 5.2, 6.0, 6.1 (@chriscz)
+* Add rake task `appraisal:regenerate`
 
 ### Fixed
 
