@@ -2,6 +2,8 @@
 
 source "http://rubygems.org"
 
+gem "pry"
+gem "pry-byebug"
 gem "rails", "~> 5.2"
 
 gemspec :path => "../"
