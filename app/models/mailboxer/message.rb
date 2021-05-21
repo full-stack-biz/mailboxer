@@ -25,7 +25,7 @@ class Mailboxer::Message < Mailboxer::Notification
 
   #Delivers a Message. USE NOT RECOMENDED.
   #Use Mailboxer::Models::Message.send_message instead.
-  def deliver(reply = false, should_clean = true)
+  def deliver(reply = false, should_clean = true, with_email = true)
     self.clean if should_clean
 
     #Receiver receipts
@@ -39,7 +39,7 @@ class Mailboxer::Message < Mailboxer::Notification
 
     if valid?
       save!
-      Mailboxer::MailDispatcher.new(self, receiver_receipts).call
+      Mailboxer::MailDispatcher.new(self, receiver_receipts).call if with_email
 
       conversation.touch if reply
 

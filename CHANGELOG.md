@@ -20,6 +20,7 @@
 * Rails 6 testing support, thanks to @rockdog
 * Add "not_trashed" example to README, thanks to @fastengineer
 * Add `deleted`, `not_deleted` scopes, thanks to @afamyial
+* Add option to not send an email via send_message, thanks to @KaoruDev
 
 ### Fixed
 
