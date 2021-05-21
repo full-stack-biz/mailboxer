@@ -22,3 +22,7 @@ end
 appraise "rails6.1" do
   gem "rails", "~> 6.1"
 end
+
+appraise "rails6.2" do
+  gem "rails", "~> 6.2"
+end

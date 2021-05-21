@@ -3,9 +3,12 @@ cache: bundler
 sudo: false
 
 rvm:
-  - 2.4.9
-  - 2.5.7
-  - 2.6.5
+  - 2.4.10
+  - 2.5.9
+  - 2.6.7
+  - 2.7.3
+  - 3.0.1
+
 
 gemfile:
   - gemfiles/rails5.0.gemfile
@@ -14,11 +17,16 @@ gemfile:
   - gemfiles/rails5.2.gemfile
   - gemfiles/rails6.0.gemfile
   - gemfiles/rails6.1.gemfile
+  - gemfiles/rails6.2.gemfile
 
 matrix:
   exclude:
-    - rvm: 2.4.9
+    - rvm: 2.4.10
       gemfile: gemfiles/rails6.0.gemfile
+    - rvm: 2.4.10
+      gemfile: gemfiles/rails6.1.gemfile
+    - rvm: 2.4.10
+      gemfile: gemfiles/rails6.2.gemfile
 
 env:
   global:
