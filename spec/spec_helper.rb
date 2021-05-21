@@ -21,6 +21,7 @@ Capybara.default_selector = :css
 # Run any available migration
 migrate_path = File.expand_path('../dummy/db/migrate', __FILE__)
 if Rails.version.start_with? '6'
+  require 'active_record/migration'
   ActiveRecord::MigrationContext.new(migrate_path, ActiveRecord::SchemaMigration).migrate
 elsif Rails.version.start_with? '5.2'
   ActiveRecord::MigrationContext.new(migrate_path).migrate
