@@ -25,6 +25,8 @@
 ### Fixed
 
 * Fix typo in README, thanks to @MarkFChavez
+* Fixed set `mailbox_type` to `inbox` after doing `add_participant`, closes https://github.com/mailboxer/mailboxer/issues/393. Thanks goes to @jerefrer
+* Fixed for Rails 6, add `optional:true` to several belongs_to relationships, closes https://github.com/mailboxer/mailboxer/issues/509. Thanks to @kevinjbayer
 
 ## 0.15.0 - 2017-05-17
 
@@ -40,7 +42,6 @@ nanoseconds for timestamp columns.
 
 * When trying to delete a Mailboxer object, a `NameError` may be thrown due
 to a missing namespace
-* Fixed set `mailbox_type` to `inbox` after doing `add_participant`, closes https://github.com/mailboxer/mailboxer/issues/393. Thanks goes to @jerefrer
 
 ## 0.14.0 - 2016-07-29
 

@@ -3,7 +3,7 @@ class Mailboxer::Message < Mailboxer::Notification
   attr_accessible :attachments if Mailboxer.protected_attributes?
   self.table_name = :mailboxer_notifications
 
-  belongs_to :conversation, :validate => true, :autosave => true
+  belongs_to :conversation, :validate => true, :autosave => true, optional: true
   validates_presence_of :sender
 
   class_attribute :on_deliver_callback
