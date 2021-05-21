@@ -4,7 +4,7 @@ end
 
 appraise "rails5.0-sqlite" do
   gem "rails", "~> 5.0"
-  gem "sqlite", "~> 1.3.6"
+  gem "sqlite3", "~> 1.3.6"
 end
 
 appraise "rails5.1" do
