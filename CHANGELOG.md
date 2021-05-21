@@ -13,7 +13,8 @@
 ### Removed
 
 * Drop test runs for Ruby 2.2.x and 2.3.x, thanks to @rockdog
-* Drop support for Rails 5.0 and 5.1
+* Drop support for Rails 5.0 and 5.1 (@chriscz)
+* Drop support for Ruby 2.4
 
 ### Added
 
