@@ -2,6 +2,22 @@
 
 ## Master (Unreleased)
 
+### Changed
+
+* Add support for multiple attachments instead of one (breaking change), Thanks to @nhinze
+* Replace Carrierwave support with ActiveStorage, thanks to @nhinze
+
+### Removed
+
+* Drop test runs for Ruby 2.2.x and 2.3.x, thanks to @rockdog
+
+### Added
+
+* Rails 5.2 testing support, thanks to @rockdog
+* Rails 6 testing support, thanks to @rockdog
+
+### Fixed
+
 ## 0.15.0 - 2017-05-17
 
 ### Changed

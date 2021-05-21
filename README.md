@@ -314,6 +314,10 @@ If you need a GUI you should take a look at these links:
 
 * The wiki page [GUI Example on a real application](https://github.com/ging/mailboxer/wiki/GUI-Example-on-a-real-application).
 
+## Merged PRS
+* https://github.com/mailboxer/mailboxer/pull/508
+* https://github.com/mailboxer/mailboxer/pull/507
+
 ## Contributors
 * [Roendal](https://github.com/ging/mailboxer/commits/master?author=Roendal) (Eduardo Casanova)
 * [dickeyxxx](https://github.com/ging/mailboxer/commits/master?author=dickeyxxx) (Jeff Dickey)
@@ -336,3 +340,5 @@ If you need a GUI you should take a look at these links:
 * [supremebeing7](https://github.com/ging/mailboxer/commits/master?author=supremebeing7) (Mark J. Lehman)
 * [searsaw](https://github.com/mailboxer/mailboxer/commits/master?author=searsaw) (Alex Sears)
 * [joshblour](https://github.com/mailboxer/mailboxer/commits/master?author=joshblour) (Yonah Forst)
+* [nhinze](https://github.com/mailboxer/mailboxer/commits/master?author=nhinze) (Nhinze)
+* [rockdog](https://github.com/mailboxer/mailboxer/commits/master?author=rockdog) (Sven Steinheißer)
