@@ -20,7 +20,7 @@
 * Rails 6 testing support, thanks to @rockdog
 * Add "not_trashed" example to README, thanks to @fastengineer
 * Add `deleted`, `not_deleted` scopes, thanks to @afamyial
-* Add option to not send an email via send_message, thanks to @KaoruDev
+* Add `with_email` option to allow not sending an email via send_message, thanks to @KaoruDev
 
 ### Fixed
 
@@ -40,6 +40,7 @@ nanoseconds for timestamp columns.
 
 * When trying to delete a Mailboxer object, a `NameError` may be thrown due
 to a missing namespace
+* Fixed set `mailbox_type` to `inbox` after doing `add_participant`, closes https://github.com/mailboxer/mailboxer/issues/393. Thanks goes to @jerefrer
 
 ## 0.14.0 - 2016-07-29
 
