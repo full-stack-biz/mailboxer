@@ -13,7 +13,6 @@ gemfile:
   - gemfiles/rails5.2.gemfile
   - gemfiles/rails6.0.gemfile
   - gemfiles/rails6.1.gemfile
-  - gemfiles/rails6.2.gemfile
 
     #matrix:
     #  exclude:
