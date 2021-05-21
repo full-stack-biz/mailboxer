@@ -98,7 +98,8 @@ describe Mailboxer::Conversation do
     describe ".inbox" do
       it "finds inbox conversations with receipts for participant" do
         expect(Mailboxer::Conversation.inbox(participant)).to eq [
-          conversation_with_multiple_entities, inbox_conversation
+          conversation_with_multiple_entities,
+          inbox_conversation
         ]
       end
     end
@@ -118,12 +119,12 @@ describe Mailboxer::Conversation do
       end
     end
 
-    describe ".not_trash" do
+    describe ".not_trash", focus: true do
       it "finds non trashed conversations with receipts for participant" do
         trashed_conversation = entity1.send_message(participant, "Body", "Subject").notification.conversation
         trashed_conversation.move_to_trash(participant)
 
-        expect(Mailboxer::Conversation.not_trash(participant)).to eq [sentbox_conversation, inbox_conversation]
+        expect(Mailboxer::Conversation.not_trash(participant)).to eq [conversation_with_multiple_entities, sentbox_conversation, inbox_conversation]
       end
     end
 
@@ -141,7 +142,7 @@ describe Mailboxer::Conversation do
         deleted_conversation = entity1.send_message(participant, "Body", "Subject").notification.conversation
         deleted_conversation.mark_as_deleted(participant)
 
-        expect(Mailboxer::Conversation.not_deleted(participant)).to eq [sentbox_conversation, inbox_conversation]
+        expect(Mailboxer::Conversation.not_deleted(participant).to_a).to eq [conversation_with_multiple_entities, sentbox_conversation, inbox_conversation]
       end
     end
 

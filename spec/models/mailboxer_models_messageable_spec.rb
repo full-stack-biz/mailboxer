@@ -307,10 +307,16 @@ describe "Mailboxer::Models::Messageable through User" do
     expect(@conversation.receipts_for(@entity1).first.trashed).to eq true
   end
 
-  it "should be able to read attachment" do
-    @receipt = @entity1.send_message(@entity2, "Body", "Subject", nil, File.open('spec/testfile.txt'))
+  it "should be able to read attachment filename" do
+    @receipt = @entity1.send_message(@entity2, "Body", "Subject", nil, [File.open('spec/testfile.txt')])
     @conversation = @receipt.conversation
-    expect(@conversation.messages.first.attachment_identifier).to eq 'testfile.txt'
+    expect(@conversation.messages.first.attachments.first.filename.to_s).to eq 'testfile.txt'
+  end
+
+  it "should be able to read attachment content" do
+    @receipt = @entity1.send_message(@entity2, "Body", "Subject", nil, [File.open('spec/testfile.txt')])
+    @conversation = @receipt.conversation
+    expect(@conversation.messages.first.attachments.first.blob.download.to_s).to eq File.read('spec/testfile.txt')
   end
 
   it "should be the same message time as passed" do
@@ -329,7 +335,7 @@ describe "Mailboxer::Models::Messageable through User" do
     it "by default should send an email" do
       expect {
         @entity1.send_message(@entity2, "body", "subject")
-      }.to change { ActionMailer::Base.deliveries.count }.by(2)
+      }.to change { ActionMailer::Base.deliveries.count }.by(1)
     end
 
     it "with false should not send an email" do
