@@ -335,7 +335,7 @@ describe "Mailboxer::Models::Messageable through User" do
     it "by default should send an email" do
       expect {
         @entity1.send_message(@entity2, "body", "subject")
-      }.to change { ActionMailer::Base.deliveries.count }.by(2)
+      }.to change { ActionMailer::Base.deliveries.count }.by(1)
     end
 
     it "with false should not send an email" do
