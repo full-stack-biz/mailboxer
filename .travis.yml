@@ -9,9 +9,11 @@ rvm:
 
 gemfile:
   - gemfiles/rails5.0.gemfile
+  - gemfiles/rails5.0_sqlite.gemfile
   - gemfiles/rails5.1.gemfile
   - gemfiles/rails5.2.gemfile
   - gemfiles/rails6.0.gemfile
+  - gemfiles/rails6.1.gemfile
 
 matrix:
   exclude:
