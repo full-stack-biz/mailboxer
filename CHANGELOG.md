@@ -2,10 +2,12 @@
 
 ## Master (Unreleased)
 
+### Breaking changes
+* Add support for multiple attachments instead of one, thanks to @nhinze
+* Replace Carrierwave support with ActiveStorage, thanks to @nhinze
+
 ### Changed
 
-* Add support for multiple attachments instead of one (breaking change), Thanks to @nhinze
-* Replace Carrierwave support with ActiveStorage, thanks to @nhinze
 * Replace deprecated `update_attributes` with `update`, thanks to @booleanbetrayal
 
 ### Removed
@@ -17,6 +19,7 @@
 * Rails 5.2 testing support, thanks to @rockdog
 * Rails 6 testing support, thanks to @rockdog
 * Add "not_trashed" example to README, thanks to @fastengineer
+* Add `deleted`, `not_deleted` scopes, thanks to @afamyial
 
 ### Fixed
 
