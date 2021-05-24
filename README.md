@@ -1,4 +1,4 @@
-# Mailboxer [![Build Status](https://travis-ci.org/chriscz/mailboxer.svg?branch=master)](https://travis-ci.org/chriscz/mailboxer) [![Gem Version](https://badge.fury.io/rb/mailboxer.png)](http://badge.fury.io/rb/mailboxer)
+# Mailboxer [![Build Status](https://travis-ci.org/chriscz/mailboxer.svg?branch=master)](https://travis-ci.org/chriscz/mailboxer) [![Gem Version](https://badge.fury.io/rb/mailboxer.png)](http://badge.fury.io/rb/mailboxer) [![Join the chat at https://gitter.im/chriscz/mailboxer](https://badges.gitter.im/chriscz/mailboxer.svg)](https://gitter.im/chriscz/mailboxer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 This project is based on the need for a private message system for [ging / social\_stream](https://github.com/ging/social_stream). Instead of creating our core message system heavily
 dependent on our development, we are trying to implement a generic and
