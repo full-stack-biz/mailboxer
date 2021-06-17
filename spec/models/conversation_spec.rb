@@ -119,7 +119,7 @@ describe Mailboxer::Conversation do
       end
     end
 
-    describe ".not_trash", focus: true do
+    describe ".not_trash" do
       it "finds non trashed conversations with receipts for participant" do
         trashed_conversation = entity1.send_message(participant, "Body", "Subject").notification.conversation
         trashed_conversation.move_to_trash(participant)
