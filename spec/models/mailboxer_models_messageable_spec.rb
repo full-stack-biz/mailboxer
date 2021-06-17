@@ -237,8 +237,6 @@ describe "Mailboxer::Models::Messageable through User" do
     expect(@notification.receipt_for(@entity1).first.trashed).to eq true
   end
 
-
-
   it "should be able to unread an owned Conversation (mark as unread)" do
     @receipt = @entity1.send_message(@entity2,"Body","Subject")
     @conversation = @receipt.conversation
@@ -344,4 +342,35 @@ describe "Mailboxer::Models::Messageable through User" do
       }.not_to change { ActionMailer::Base.deliveries.count }
     end
   end
+
+  context "sanitize option" do
+    before(:each)do
+      @original_uses_emails = Mailboxer.uses_emails
+      Mailboxer.uses_emails = false
+
+      @unsanitized = "<a href='https://google.com' onclick='window.foo()'>Click to Search</a>"
+      @sanitized = "<a href=\"https://google.com\">Click to Search</a>"
+    end
+
+    after(:each) do
+      Mailboxer.uses_emails = @original_uses_emails
+    end
+
+    it "sanitizes the subject and body by default" do
+      receipt = @entity1.send_message(@entity2, @unsanitized.dup, @unsanitized.dup)
+
+      expect(receipt.message.reload.body).to eq(@sanitized)
+      expect(receipt.message.reload.subject).to eq(@sanitized)
+      expect(receipt.conversation.reload.subject).to eq(@sanitized)
+    end
+
+    it "does not sanitize subject or body when false" do
+      receipt = @entity1.send_message(@entity2, @unsanitized.dup, @unsanitized.dup, false)
+
+      expect(receipt.message.reload.body).to eq(@unsanitized)
+      expect(receipt.message.reload.subject).to eq(@unsanitized)
+      expect(receipt.conversation.reload.subject).to eq(@unsanitized)
+    end
+  end
+
 end

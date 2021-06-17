@@ -1,6 +1,8 @@
 class Mailboxer::Conversation < ActiveRecord::Base
   self.table_name = :mailboxer_conversations
 
+  attr_writer :sanitize_text
+
   attr_accessible :subject if Mailboxer.protected_attributes?
 
   has_many :opt_outs, :dependent => :destroy, :class_name => "Mailboxer::Conversation::OptOut"
@@ -10,7 +12,9 @@ class Mailboxer::Conversation < ActiveRecord::Base
   validates :subject, :presence => true,
                       :length => { :maximum => Mailboxer.subject_max_length }
 
-  before_validation :clean
+  before_validation :clean,
+    on: :create,
+    if: :sanitize_text?
 
   scope :participant, lambda {|participant|
     where('mailboxer_notifications.type'=> Mailboxer::Message.name).
@@ -215,6 +219,10 @@ class Mailboxer::Conversation < ActiveRecord::Base
   end
 
   protected
+
+  def sanitize_text?
+    !!@sanitize_text
+  end
 
   #Use the default sanitize to clean the conversation subject
   def clean

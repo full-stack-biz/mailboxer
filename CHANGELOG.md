@@ -28,6 +28,7 @@
 
 ### Fixed
 
+* Fix conversation subject sanitization when not requested
 * Fix typo in README, thanks to @MarkFChavez
 * Fixed set `mailbox_type` to `inbox` after doing `add_participant`, closes https://github.com/mailboxer/mailboxer/issues/393. Thanks goes to @jerefrer
 * Fixed for Rails 6, add `optional:true` to several belongs_to relationships, closes https://github.com/mailboxer/mailboxer/issues/509. Thanks to @kevinjbayer
