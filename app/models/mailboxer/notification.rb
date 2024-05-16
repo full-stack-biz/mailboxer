@@ -8,8 +8,8 @@ module Mailboxer
 
     attr_accessible :body, :subject, :global, :expires if Mailboxer.protected_attributes?
 
-    belongs_to :sender, polymorphic: true, optional: true, optional: true
-    belongs_to :notified_object, polymorphic: true, optional: true, optional: true
+    belongs_to :sender, polymorphic: true, optional: true
+    belongs_to :notified_object, polymorphic: true, optional: true
     has_many :receipts, dependent: :destroy, class_name: 'Mailboxer::Receipt'
 
     validates :subject, length: { maximum: Mailboxer.subject_max_length }

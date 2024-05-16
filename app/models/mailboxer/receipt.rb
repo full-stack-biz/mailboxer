@@ -6,9 +6,8 @@ module Mailboxer
     attr_accessible :trashed, :is_read, :deleted if Mailboxer.protected_attributes?
 
     belongs_to :notification, class_name: 'Mailboxer::Notification', optional: true
-    belongs_to :receiver, polymorphic: true, optional: true, optional: true
-    belongs_to :message, class_name: 'Mailboxer::Message', foreign_key: 'notification_id', optional: true,
-                         optional: true
+    belongs_to :receiver, polymorphic: true, optional: true
+    belongs_to :message, class_name: 'Mailboxer::Message', foreign_key: 'notification_id', optional: true
 
     validates :receiver, presence: true
 
