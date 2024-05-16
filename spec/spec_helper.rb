@@ -43,7 +43,6 @@ RSpec.configure do |config|
     FactoryBot.find_definitions
   end
 end
-#Dir["#{File.dirname(__FILE__)}/factories/*.rb"].sort.each { |f| require f }
 
 # Shoulda Matchers
 require 'shoulda/matchers'
