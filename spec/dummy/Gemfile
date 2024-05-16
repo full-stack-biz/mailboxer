@@ -5,9 +5,9 @@ source 'http://rubygems.org'
 gem 'factory_girl'
 gem 'listen'
 gem 'mailboxer', path: '../../'
-gem 'rails', '~> 6.1'
+gem 'rails', '~> 7.1.3', '>= 7.1.3.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'jdbc-sqlite3', platform: :jruby
-gem 'sqlite3', platform: %i[ruby mswin mingw]
+gem 'sqlite3', '~> 1.4', platform: %i[ruby mswin mingw]

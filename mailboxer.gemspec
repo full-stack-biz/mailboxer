@@ -35,9 +35,9 @@ Gem::Specification.new do |s|
   # Specs
   s.add_development_dependency('appraisal', '~> 1.0.0')
   s.add_development_dependency('factory_girl', '~> 2.6.0')
-  s.add_development_dependency 'rspec-collection_matchers', '~> 1.1'
-  s.add_development_dependency 'rspec-its', '~> 1.1'
-  s.add_development_dependency 'rspec-rails', '~> 3.0'
+  s.add_development_dependency 'rspec-collection_matchers', '~> 1.2.1'
+  s.add_development_dependency 'rspec-its', '~> 1.3'
+  s.add_development_dependency 'rspec-rails', '~> 6.1.2'
   s.add_development_dependency('shoulda-matchers', '~> 4')
   # Population
   s.add_development_dependency('forgery', '>= 0.3.6')
@@ -48,7 +48,7 @@ Gem::Specification.new do |s|
     s.add_development_dependency('activerecord-jdbcsqlite3-adapter', '1.3.0.rc1')
     s.add_development_dependency('jdbc-sqlite3')
   else
-    s.add_development_dependency('sqlite3')
+    s.add_development_dependency('sqlite3', '~> 1.4')
   end
   s.add_development_dependency 'rubocop'
   s.add_development_dependency 'rubocop-capybara'
