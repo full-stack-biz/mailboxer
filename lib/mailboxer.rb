@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module Mailboxer
   module Models
     autoload :Messageable, 'mailboxer/models/messageable'
   end
 
   mattr_accessor :default_from
-  @@default_from = "no-reply@mailboxer.com"
+  @@default_from = 'no-reply@mailboxer.com'
   mattr_accessor :uses_emails
   @@uses_emails = true
   mattr_accessor :search_enabled
@@ -20,7 +22,7 @@ module Mailboxer
   mattr_accessor :subject_max_length
   @@subject_max_length = 255
   mattr_accessor :body_max_length
-  @@body_max_length = 32000
+  @@body_max_length = 32_000
   mattr_accessor :notification_mailer
   mattr_accessor :message_mailer
   mattr_accessor :custom_deliver_proc
@@ -34,7 +36,6 @@ module Mailboxer
       defined?(ProtectedAttributes)
     end
   end
-
 end
 # reopen ActiveRecord and include all the above to make
 # them available to all our models if they want it

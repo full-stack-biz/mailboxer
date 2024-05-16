@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
 module Mailboxer
   class MailDispatcher
     attr_reader :mailable, :receipts
 
     def initialize(mailable, receipts)
-      @mailable, @receipts = mailable, receipts
+      @mailable = mailable
+      @receipts = receipts
     end
 
     def call
@@ -27,7 +30,7 @@ module Mailboxer
 
     def mailer_config_method
       klass = mailable.class.name.demodulize
-      method = "#{klass.downcase}_mailer".to_sym
+      method = :"#{klass.downcase}_mailer"
       Mailboxer.send(method) if Mailboxer.respond_to? method
     end
 
@@ -47,8 +50,8 @@ module Mailboxer
       mail = mailer.send_email(mailable, receipt.receiver)
       mail.respond_to?(:deliver_now) ? mail.deliver_now : mail.deliver
       receipt.assign_attributes(
-        :delivery_method => :email,
-        :message_id => mail.message_id
+        delivery_method: :email,
+        message_id: mail.message_id
       )
       mail
     end

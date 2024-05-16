@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddDeliveryTrackingInfoToMailboxerReceipts < ActiveRecord::Migration[4.2]
   def change
     add_column :mailboxer_receipts, :is_delivered, :boolean, default: false

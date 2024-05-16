@@ -1,8 +1,11 @@
-class Mailboxer::NotificationBuilder < Mailboxer::BaseBuilder
+# frozen_string_literal: true
 
-  protected
+module Mailboxer
+  class NotificationBuilder < Mailboxer::BaseBuilder
+    protected
 
-  def klass
-    Mailboxer::Notification
+    def klass
+      Mailboxer::Notification
+    end
   end
 end

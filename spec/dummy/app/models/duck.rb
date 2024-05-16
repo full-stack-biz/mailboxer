@@ -1,11 +1,13 @@
-class Duck < ActiveRecord::Base
+# frozen_string_literal: true
+
+class Duck < ApplicationRecord
   acts_as_messageable
   def mailboxer_email(object)
     case object
     when Mailboxer::Message
-      return nil
+      nil
     when Mailboxer::Notification
-      return email
+      email
     end
   end
 end

@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 FactoryGirl.define do
   factory :cylon do
     sequence :name do |n|
-      "Cylon #{ n }"
+      "Cylon #{n}"
     end
     sequence :email do |n|
-      "cylon#{ n }@cylon.com"
+      "cylon#{n}@cylon.com"
     end
   end
 end

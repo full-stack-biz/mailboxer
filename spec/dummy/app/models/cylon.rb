@@ -1,7 +1,8 @@
-class Cylon < ActiveRecord::Base
+# frozen_string_literal: true
+
+class Cylon < ApplicationRecord
   acts_as_messageable
-  def mailboxer_email(object)
-    return nil
+  def mailboxer_email(_object)
+    nil
   end
 end
-

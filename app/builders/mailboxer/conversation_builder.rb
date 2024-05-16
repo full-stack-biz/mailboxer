@@ -1,8 +1,11 @@
-class Mailboxer::ConversationBuilder < Mailboxer::BaseBuilder
+# frozen_string_literal: true
 
-  protected
+module Mailboxer
+  class ConversationBuilder < Mailboxer::BaseBuilder
+    protected
 
-  def klass
-    Mailboxer::Conversation
+    def klass
+      Mailboxer::Conversation
+    end
   end
 end

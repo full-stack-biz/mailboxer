@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # require 'carrierwave'
 begin
   require 'sunspot_rails'
@@ -6,7 +8,7 @@ end
 
 module Mailboxer
   class Engine < Rails::Engine
-    initializer "mailboxer.models.messageable" do
+    initializer 'mailboxer.models.messageable' do
       ActiveSupport.on_load(:active_record) do
         extend Mailboxer::Models::Messageable::ActiveRecordExtension
       end

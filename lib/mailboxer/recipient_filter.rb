@@ -1,8 +1,12 @@
+# frozen_string_literal: true
+
 module Mailboxer
   class RecipientFilter
     attr_reader :mailable, :recipients
+
     def initialize(mailable, recipients)
-      @mailable, @recipients = mailable, recipients
+      @mailable = mailable
+      @recipients = recipients
     end
 
     # recipients can be filtered on a conversation basis
