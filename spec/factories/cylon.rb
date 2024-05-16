@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :cylon do
     sequence :name do |n|
       "Cylon #{n}"

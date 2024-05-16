@@ -34,7 +34,7 @@ Gem::Specification.new do |s|
   end
   # Specs
   s.add_development_dependency('appraisal', '~> 1.0.0')
-  s.add_development_dependency('factory_girl', '~> 2.6.0')
+  s.add_development_dependency('factory_bot_rails', '~> 6.4.3')
   s.add_development_dependency 'rspec-collection_matchers', '~> 1.2.1'
   s.add_development_dependency 'rspec-its', '~> 1.3'
   s.add_development_dependency 'rspec-rails', '~> 6.1.2'

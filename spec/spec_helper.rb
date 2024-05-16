@@ -35,8 +35,15 @@ end
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].sort.each { |f| require f }
 
 # Load Factories
-require 'factory_girl'
-Dir["#{File.dirname(__FILE__)}/factories/*.rb"].sort.each { |f| require f }
+require 'factory_bot'
+RSpec.configure do |config|
+  config.include FactoryBot::Syntax::Methods
+
+  config.before(:suite) do
+    FactoryBot.find_definitions
+  end
+end
+#Dir["#{File.dirname(__FILE__)}/factories/*.rb"].sort.each { |f| require f }
 
 # Shoulda Matchers
 require 'shoulda/matchers'
