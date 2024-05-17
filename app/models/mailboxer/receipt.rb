@@ -143,8 +143,8 @@ module Mailboxer
         include Litesearch::Model
 
         litesearch do |schema|
-          schema.field :subject, target: 'messages.subject'
-          schema.field :body, target: 'messages.body'
+          schema.field :subject, target: 'mailboxer_notifications.subject'
+          schema.field :body, target: 'mailboxer_notifications.body'
           schema.tokenizer :trigram
         end
       when :pg_search
