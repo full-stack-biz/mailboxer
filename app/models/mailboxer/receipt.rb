@@ -5,11 +5,13 @@ module Mailboxer
     self.table_name = :mailboxer_receipts
     attr_accessible :trashed, :is_read, :deleted if Mailboxer.protected_attributes?
 
-    belongs_to :notification, class_name: 'Mailboxer::Notification', optional: true
+    belongs_to :notification, -> { where(type: nil) }, class_name: 'Mailboxer::Notification', optional: true
     belongs_to :receiver, polymorphic: true, optional: true
     belongs_to :message, class_name: 'Mailboxer::Message', foreign_key: 'notification_id', optional: true
 
     validates :receiver, presence: true
+
+    validate :notification_or_message_present
 
     scope :recipient, lambda { |recipient|
       where(receiver_id: recipient.id, receiver_type: recipient.class.base_class.to_s)
@@ -160,6 +162,13 @@ module Mailboxer
           end
           integer :receiver_id
         end
+      end
+    end
+    private
+
+    def notification_or_message_present
+      if message.nil? && notification.nil?
+        errors.add(:base, I18n.t('mailboxer.errors.receipt.notification_or_message_present'))
       end
     end
   end

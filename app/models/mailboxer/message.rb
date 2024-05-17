@@ -6,7 +6,8 @@ module Mailboxer
     attr_accessible :attachments if Mailboxer.protected_attributes?
     self.table_name = :mailboxer_notifications
 
-    belongs_to :conversation, validate: true, autosave: true, optional: true
+    belongs_to :conversation, validate: true, autosave: true
+    has_many :receipts, dependent: :destroy, class_name: 'Mailboxer::Receipt', inverse_of: :message
     validates :sender, presence: true
 
     class_attribute :on_deliver_callback

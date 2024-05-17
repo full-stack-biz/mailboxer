@@ -12,7 +12,7 @@ describe 'Messages And Mailboxer::Receipts', type: :integration do
     describe 'message sending' do
       before do
         @receipt1 = @entity1.send_message(@entity2, 'Body', 'Subject')
-        @message1 = @receipt1.notification
+        @message1 = @receipt1.message
       end
 
       it 'creates proper message' do
@@ -53,8 +53,8 @@ describe 'Messages And Mailboxer::Receipts', type: :integration do
       before do
         @receipt1 = @entity1.send_message(@entity2, 'Body', 'Subject')
         @receipt2 = @entity2.reply_to_sender(@receipt1, 'Reply body')
-        @message1 = @receipt1.notification
-        @message2 = @receipt2.notification
+        @message1 = @receipt1.message
+        @message2 = @receipt2.message
       end
 
       it 'creates proper message' do
@@ -99,8 +99,8 @@ describe 'Messages And Mailboxer::Receipts', type: :integration do
       before do
         @receipt1 = @entity1.send_message(@entity2, 'Body', 'Subject')
         @receipt2 = @entity2.reply_to_all(@receipt1, 'Reply body')
-        @message1 = @receipt1.notification
-        @message2 = @receipt2.notification
+        @message1 = @receipt1.message
+        @message2 = @receipt2.message
       end
 
       it 'creates proper message' do
@@ -145,8 +145,8 @@ describe 'Messages And Mailboxer::Receipts', type: :integration do
       before do
         @receipt1 = @entity1.send_message(@entity2, 'Body', 'Subject')
         @receipt2 = @entity2.reply_to_conversation(@receipt1.conversation, 'Reply body')
-        @message1 = @receipt1.notification
-        @message2 = @receipt2.notification
+        @message1 = @receipt1.message
+        @message2 = @receipt2.message
       end
 
       it 'creates proper message' do
@@ -197,7 +197,7 @@ describe 'Messages And Mailboxer::Receipts', type: :integration do
     describe 'message sending' do
       before do
         @receipt1 = @entity1.send_message(@entity2, 'Body', 'Subject')
-        @message1 = @receipt1.notification
+        @message1 = @receipt1.message
       end
 
       it 'creates proper message' do
@@ -238,8 +238,8 @@ describe 'Messages And Mailboxer::Receipts', type: :integration do
       before do
         @receipt1 = @entity1.send_message(@entity2, 'Body', 'Subject')
         @receipt2 = @entity2.reply_to_sender(@receipt1, 'Reply body')
-        @message1 = @receipt1.notification
-        @message2 = @receipt2.notification
+        @message1 = @receipt1.message
+        @message2 = @receipt2.message
       end
 
       it 'creates proper message' do
@@ -284,8 +284,8 @@ describe 'Messages And Mailboxer::Receipts', type: :integration do
       before do
         @receipt1 = @entity1.send_message(@entity2, 'Body', 'Subject')
         @receipt2 = @entity2.reply_to_all(@receipt1, 'Reply body')
-        @message1 = @receipt1.notification
-        @message2 = @receipt2.notification
+        @message1 = @receipt1.message
+        @message2 = @receipt2.message
       end
 
       it 'creates proper message' do
@@ -358,7 +358,7 @@ describe 'Messages And Mailboxer::Receipts', type: :integration do
     describe 'message sending' do
       before do
         @receipt1 = @entity1.send_message(@recipients, 'Body', 'Subject')
-        @message1 = @receipt1.notification
+        @message1 = @receipt1.message
       end
 
       it 'creates proper message' do
@@ -402,8 +402,8 @@ describe 'Messages And Mailboxer::Receipts', type: :integration do
       before do
         @receipt1 = @entity1.send_message(@recipients, 'Body', 'Subject')
         @receipt2 = @entity2.reply_to_sender(@receipt1, 'Reply body')
-        @message1 = @receipt1.notification
-        @message2 = @receipt2.notification
+        @message1 = @receipt1.message
+        @message2 = @receipt2.message
       end
 
       it 'creates proper message' do
@@ -453,8 +453,8 @@ describe 'Messages And Mailboxer::Receipts', type: :integration do
       before do
         @receipt1 = @entity1.send_message(@recipients, 'Body', 'Subject')
         @receipt2 = @entity2.reply_to_all(@receipt1, 'Reply body')
-        @message1 = @receipt1.notification
-        @message2 = @receipt2.notification
+        @message1 = @receipt1.message
+        @message2 = @receipt2.message
         @recipients2 = []
         @recipients2 << @entity1
         @recipients2 << @entity3
@@ -533,7 +533,7 @@ describe 'Messages And Mailboxer::Receipts', type: :integration do
     describe 'message sending' do
       before do
         @receipt1 = @entity1.send_message(@recipients, 'Body', 'Subject')
-        @message1 = @receipt1.notification
+        @message1 = @receipt1.message
       end
 
       it 'creates proper message' do
@@ -577,8 +577,8 @@ describe 'Messages And Mailboxer::Receipts', type: :integration do
       before do
         @receipt1 = @entity1.send_message(@recipients, 'Body', 'Subject')
         @receipt2 = @entity2.reply_to_sender(@receipt1, 'Reply body')
-        @message1 = @receipt1.notification
-        @message2 = @receipt2.notification
+        @message1 = @receipt1.message
+        @message2 = @receipt2.message
       end
 
       it 'creates proper message' do
@@ -628,8 +628,8 @@ describe 'Messages And Mailboxer::Receipts', type: :integration do
       before do
         @receipt1 = @entity1.send_message(@recipients, 'Body', 'Subject')
         @receipt2 = @entity2.reply_to_all(@receipt1, 'Reply body')
-        @message1 = @receipt1.notification
-        @message2 = @receipt2.notification
+        @message1 = @receipt1.message
+        @message2 = @receipt2.message
         @recipients2 = []
         @recipients2 << @entity1
         @recipients2 << @entity3
@@ -704,7 +704,7 @@ describe 'Messages And Mailboxer::Receipts', type: :integration do
     describe 'message sending' do
       before do
         @receipt1 = @entity1.send_message(@entity2, 'Body', 'Subject')
-        @message1 = @receipt1.notification
+        @message1 = @receipt1.message
       end
 
       it 'creates proper message' do
@@ -745,8 +745,8 @@ describe 'Messages And Mailboxer::Receipts', type: :integration do
       before do
         @receipt1 = @entity1.send_message(@entity2, 'Body', 'Subject')
         @receipt2 = @entity2.reply_to_sender(@receipt1, 'Reply body')
-        @message1 = @receipt1.notification
-        @message2 = @receipt2.notification
+        @message1 = @receipt1.message
+        @message2 = @receipt2.message
       end
 
       it 'creates proper message' do
@@ -791,8 +791,8 @@ describe 'Messages And Mailboxer::Receipts', type: :integration do
       before do
         @receipt1 = @entity1.send_message(@entity2, 'Body', 'Subject')
         @receipt2 = @entity2.reply_to_all(@receipt1, 'Reply body')
-        @message1 = @receipt1.notification
-        @message2 = @receipt2.notification
+        @message1 = @receipt1.message
+        @message2 = @receipt2.message
       end
 
       it 'creates proper message' do
@@ -837,8 +837,8 @@ describe 'Messages And Mailboxer::Receipts', type: :integration do
       before do
         @receipt1 = @entity1.send_message(@entity2, 'Body', 'Subject')
         @receipt2 = @entity2.reply_to_conversation(@receipt1.conversation, 'Reply body')
-        @message1 = @receipt1.notification
-        @message2 = @receipt2.notification
+        @message1 = @receipt1.message
+        @message2 = @receipt2.message
       end
 
       it 'creates proper message' do

@@ -13,7 +13,7 @@ describe Mailboxer::Message do
     describe 'empty subject' do
       before do
         @receipt1 = @entity1.send_message(@entity2, 'Body', '')
-        @message1 = @receipt1.notification
+        @message1 = @receipt1.message
       end
 
       it 'adds errors to the created notification' do
@@ -30,7 +30,7 @@ describe Mailboxer::Message do
       @entity1 = create(:user)
       @entity2 = create(:user)
       @receipt1 = @entity1.send_message(@entity2, 'Body', 'Subject')
-      @message1 = @receipt1.notification
+      @message1 = @receipt1.message
     end
 
     it 'is able to be marked as deleted' do
@@ -55,10 +55,10 @@ describe Mailboxer::Message do
       end
 
       it 'has right recipients' do
-        expect(@receipt1.notification.recipients.count).to eq 2
-        expect(@receipt2.notification.recipients.count).to eq 2
-        expect(@receipt3.notification.recipients.count).to eq 2
-        expect(@receipt4.notification.recipients.count).to eq 2
+        expect(@receipt1.message.recipients.count).to eq 2
+        expect(@receipt2.message.recipients.count).to eq 2
+        expect(@receipt3.message.recipients.count).to eq 2
+        expect(@receipt4.message.recipients.count).to eq 2
       end
     end
   end

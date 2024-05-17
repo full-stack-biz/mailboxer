@@ -10,7 +10,7 @@ describe Mailboxer::Receipt do
   end
 
   it 'belongs to a message' do
-    assert @mail1.notification
+    assert @mail1.message
   end
 
   it 'belongs to a conversation' do
