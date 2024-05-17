@@ -11,8 +11,6 @@ module Mailboxer
 
     validates :receiver, presence: true
 
-    validate :notification_or_message_present
-
     scope :recipient, lambda { |recipient|
       where(receiver_id: recipient.id, receiver_type: recipient.class.base_class.to_s)
     }
@@ -162,16 +160,6 @@ module Mailboxer
           end
           integer :receiver_id
         end
-      end
-    end
-    private
-
-    def notification_or_message_present
-      if message.nil? && notification.nil?
-        errors.add(:base, I18n.t('mailboxer.errors.receipt.notification_or_message_present'))
-      end
-      if message.nil? && notification.nil?
-        errors.add(:base, I18n.t('mailboxer.errors.receipt.notification_and_message_present'))
       end
     end
   end

@@ -8,7 +8,7 @@ module Mailboxer
 
     belongs_to :conversation, validate: true, autosave: true
     has_many :receipts, dependent: :destroy, class_name: 'Mailboxer::Receipt', inverse_of: :message
-    validates :sender, presence: true
+    validates :sender, :body, presence: true
 
     class_attribute :on_deliver_callback
     protected :on_deliver_callback
