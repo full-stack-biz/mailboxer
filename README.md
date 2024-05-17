@@ -1,3 +1,8 @@
+# Purpose of this fork
+
+This fork is targeting completely dropping support for Rails versions < 7.1 and dropping support for Ruby versions < 3.0.
+If you looking for a version that supports Rails 6.1 and Ruby 2.7, please use the [original](https://github.com/mailboxer/mailboxer) version.
+
 # Mailboxer [![Build Status](https://travis-ci.org/chriscz/mailboxer.svg?branch=master)](https://travis-ci.org/chriscz/mailboxer) [![Gem Version](https://badge.fury.io/rb/mailboxer.png)](http://badge.fury.io/rb/mailboxer) [![Join the chat at https://gitter.im/chriscz/mailboxer](https://badges.gitter.im/chriscz/mailboxer.svg)](https://gitter.im/chriscz/mailboxer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 This project is based on the need for a private message system for [ging / social\_stream](https://github.com/ging/social_stream). Instead of creating our core message system heavily
