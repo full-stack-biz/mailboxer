@@ -170,6 +170,9 @@ module Mailboxer
       if message.nil? && notification.nil?
         errors.add(:base, I18n.t('mailboxer.errors.receipt.notification_or_message_present'))
       end
+      if message.nil? && notification.nil?
+        errors.add(:base, I18n.t('mailboxer.errors.receipt.notification_and_message_present'))
+      end
     end
   end
 end

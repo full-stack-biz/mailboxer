@@ -8,3 +8,4 @@ en:
     errors:
       receipt:
         notification_or_message_present: You must provide either a notification or a message
+        notification_and_message_present: Receipt can't be both a message and a notification
