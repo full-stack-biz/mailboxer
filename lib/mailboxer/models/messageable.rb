@@ -226,7 +226,8 @@ module Mailboxer
       end
 
       def search_messages(query)
-        if Mailboxer.search_engine == :pg_search
+        case Mailboxer.search_engine
+        when :pg_search, :litesearch
           Mailboxer::Receipt.search(query).where(receiver_id: id).map(&:conversation).uniq
         else
           @search = Mailboxer::Receipt.search do

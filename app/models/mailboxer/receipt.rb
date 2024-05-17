@@ -138,7 +138,16 @@ module Mailboxer
     end
 
     if Mailboxer.search_enabled
-      if Mailboxer.search_engine == :pg_search
+      case Mailboxer.search_engine
+      when :litesearch
+        include Litesearch::Model
+
+        litesearch do |schema|
+          schema.field :subject, target: 'message.subject'
+          schema.field :body, target: 'message.body'
+          schema.tokenizer :trigram
+        end
+      when :pg_search
         include PgSearch
         pg_search_scope :search, associated_against: { message: { subject: 'A', body: 'B' } }, using: :tsearch
       else
