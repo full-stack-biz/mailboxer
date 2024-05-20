@@ -5,9 +5,9 @@ module Mailboxer
     self.table_name = :mailboxer_receipts
     attr_accessible :trashed, :is_read, :deleted if Mailboxer.protected_attributes?
 
-    belongs_to :notification, -> { where(type: nil) }, class_name: 'Mailboxer::Notification', optional: true
+    belongs_to :notification, -> { where(type: nil) }, class_name: 'Mailboxer::Notification', optional: true, validate: true
     belongs_to :receiver, polymorphic: true, optional: true
-    belongs_to :message, class_name: 'Mailboxer::Message', foreign_key: 'notification_id', optional: true
+    belongs_to :message, class_name: 'Mailboxer::Message', foreign_key: 'notification_id', optional: true, validate: true
 
     validates :receiver, presence: true
 
