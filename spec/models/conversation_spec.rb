@@ -9,8 +9,8 @@ describe Mailboxer::Conversation do
   let!(:receipt2) { entity2.reply_to_all(receipt1, 'Reply body 1') }
   let!(:receipt3) { entity1.reply_to_all(receipt2, 'Reply body 2') }
   let!(:receipt4) { entity2.reply_to_all(receipt3, 'Reply body 3') }
-  let!(:message1) { receipt1.notification }
-  let!(:message4) { receipt4.notification }
+  let!(:message1) { receipt1.message }
+  let!(:message4) { receipt4.message }
   let!(:conversation) { message1.conversation }
 
   it { is_expected.to validate_presence_of :subject }
@@ -82,10 +82,10 @@ describe Mailboxer::Conversation do
   describe 'scopes' do
     let(:participant) { create(:user) }
     let(:entity3) { create(:user) }
-    let!(:inbox_conversation) { entity1.send_message(participant, 'Body', 'Subject').notification.conversation }
-    let!(:sentbox_conversation) { participant.send_message(entity1, 'Body', 'Subject').notification.conversation }
+    let!(:inbox_conversation) { entity1.send_message(participant, 'Body', 'Subject').message.conversation }
+    let!(:sentbox_conversation) { participant.send_message(entity1, 'Body', 'Subject').message.conversation }
     let!(:conversation_with_multiple_entities) do
-      entity1.send_message([participant, entity3], 'Body', 'Subject').notification.conversation
+      entity1.send_message([participant, entity3], 'Body', 'Subject').message.conversation
     end
 
     describe '.participant' do
@@ -115,7 +115,7 @@ describe Mailboxer::Conversation do
 
     describe '.trash' do
       it 'finds trash conversations with receipts for participant' do
-        trashed_conversation = entity1.send_message(participant, 'Body', 'Subject').notification.conversation
+        trashed_conversation = entity1.send_message(participant, 'Body', 'Subject').message.conversation
         trashed_conversation.move_to_trash(participant)
 
         expect(described_class.trash(participant)).to eq [trashed_conversation]
@@ -124,7 +124,7 @@ describe Mailboxer::Conversation do
 
     describe '.not_trash' do
       it 'finds non trashed conversations with receipts for participant' do
-        trashed_conversation = entity1.send_message(participant, 'Body', 'Subject').notification.conversation
+        trashed_conversation = entity1.send_message(participant, 'Body', 'Subject').message.conversation
         trashed_conversation.move_to_trash(participant)
 
         expect(described_class.not_trash(participant)).to eq [conversation_with_multiple_entities,
@@ -134,7 +134,7 @@ describe Mailboxer::Conversation do
 
     describe '.deleted' do
       it 'finds deleted conversations with receipts for participant' do
-        deleted_conversation = entity1.send_message(participant, 'Body', 'Subject').notification.conversation
+        deleted_conversation = entity1.send_message(participant, 'Body', 'Subject').message.conversation
         deleted_conversation.mark_as_deleted(participant)
 
         expect(described_class.deleted(participant)).to eq [deleted_conversation]
@@ -143,7 +143,7 @@ describe Mailboxer::Conversation do
 
     describe '.not_deleted' do
       it 'finds non deleted conversations with receipts for participant' do
-        deleted_conversation = entity1.send_message(participant, 'Body', 'Subject').notification.conversation
+        deleted_conversation = entity1.send_message(participant, 'Body', 'Subject').message.conversation
         deleted_conversation.mark_as_deleted(participant)
 
         expect(described_class.not_deleted(participant).to_a).to eq [conversation_with_multiple_entities,
@@ -158,7 +158,7 @@ describe Mailboxer::Conversation do
           inbox_conversation,
           conversation_with_multiple_entities
         ].each { |c| c.mark_as_read(participant) }
-        unread_conversation = entity1.send_message(participant, 'Body', 'Subject').notification.conversation
+        unread_conversation = entity1.send_message(participant, 'Body', 'Subject').message.conversation
 
         expect(described_class.unread(participant)).to eq [unread_conversation]
       end
