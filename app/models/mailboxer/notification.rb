@@ -10,7 +10,7 @@ module Mailboxer
 
     belongs_to :sender, polymorphic: true, optional: true
     belongs_to :notified_object, polymorphic: true, optional: true
-    has_many :receipts, dependent: :destroy, class_name: 'Mailboxer::Receipt'
+    has_many :receipts, dependent: :destroy, class_name: 'Mailboxer::Receipt', inverse_of: :notification
 
     validates :subject, length: { maximum: Mailboxer.subject_max_length }
     validates :body,    presence: true,

@@ -13,9 +13,9 @@ Mailboxer.setup do |config|
   config.notify_method = :notify
 
   # Configures if you use or not a search engine and which one you are using
-  # Supported engines: [:solr,:sphinx,:pg_search]
+  # Supported engines: [:solr, :sphinx, :pg_search, :litesearch]
   config.search_enabled = false
-  config.search_engine = :solr
+  config.search_engine = :litesearch
 
   # Configures maximum length of the message subject and body
   config.subject_max_length = 255

@@ -225,9 +225,12 @@ module Mailboxer
         end
       end
 
-      def search_messages(query)
-        if Mailboxer.search_engine == :pg_search
-          Mailboxer::Receipt.search(query).where(receiver_id: id).map(&:conversation).uniq
+      def search_messages(query, mailbox_type: nil)
+        case Mailboxer.search_engine
+        when :pg_search, :litesearch
+          query = Mailboxer::Receipt.select(:id).search(query).where(receiver_id: id)
+          query = query.where(mailbox_type: mailbox_type) if mailbox_type
+          Conversation.joins(:receipts).where(receipts: { id: Mailboxer::Receipt.select('id').from(query) }).distinct
         else
           @search = Mailboxer::Receipt.search do
             fulltext query

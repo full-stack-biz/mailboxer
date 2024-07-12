@@ -5,9 +5,9 @@ module Mailboxer
     self.table_name = :mailboxer_receipts
     attr_accessible :trashed, :is_read, :deleted if Mailboxer.protected_attributes?
 
-    belongs_to :notification, class_name: 'Mailboxer::Notification', optional: true
+    belongs_to :notification, -> { where(type: nil) }, class_name: 'Mailboxer::Notification', optional: true, validate: true
     belongs_to :receiver, polymorphic: true, optional: true
-    belongs_to :message, class_name: 'Mailboxer::Message', foreign_key: 'notification_id', optional: true
+    belongs_to :message, class_name: 'Mailboxer::Message', foreign_key: 'notification_id', optional: true, validate: true
 
     validates :receiver, presence: true
 
@@ -138,7 +138,16 @@ module Mailboxer
     end
 
     if Mailboxer.search_enabled
-      if Mailboxer.search_engine == :pg_search
+      case Mailboxer.search_engine
+      when :litesearch
+        include Litesearch::Model
+
+        litesearch do |schema|
+          schema.field :subject, target: 'mailboxer_notifications.subject', col: :notification_id
+          schema.field :body, target: 'mailboxer_notifications.body', col: :notification_id
+          schema.tokenizer :trigram
+        end
+      when :pg_search
         include PgSearch
         pg_search_scope :search, associated_against: { message: { subject: 'A', body: 'B' } }, using: :tsearch
       else
