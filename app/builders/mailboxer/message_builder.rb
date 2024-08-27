@@ -12,7 +12,7 @@ module Mailboxer
         when File
           object.attachments.attach(io: attachment, filename: File.basename(attachment.path))
         when Hash
-          object.attachments.attach(io: attachment[:blob], filename: attachment[:filename])
+          object.attachments.attach(io: attachment[:io], filename: attachment[:filename], content_type: attachment[:content_type])
         else # blob
           object.attachments.attach(attachment)
         end
